@@ -7,14 +7,14 @@ This package provides a reactivity layer for Alpine 2.x.
 When you create a component that uses a value defined outside of it, you can modify the value from Alpine, but not vice versa:
 
 ```html
-<div x-data="{ counter: window.clickCount "}>
+<div x-data="{ counter: window.clickCount }">
     <button @click="counter++">+</button>
     Click count: <span x-text="count" />
     <button @click="counter++">--</button>
 </div>
 ```
 
-Clicking the buttons **will** update `window.clickCount`. However when `window.clickCount` is modified outside of the component, Alpine won't notice, and won't re-render the DOM.
+Clicking the buttons **will** update `window.clickCount`. However when `window.clickCount` is modified outside of the component, Alpine **won't** notice, and won't re-render the DOM.
 
 Only after something else triggers a re-render, Alpine will show the correct click count again.
 
@@ -25,6 +25,8 @@ This package provides a reactive proxy wrapper for these objects. The syntax is 
 One difference between this package's solution and Vue's `reactive()` is that Alpine requires the calls to be **component-specific**. Meaning, the `reactive()` helper also needs the component instance/element. To simplify that, the package also provides a magic Alpine property, `$reactive`.
 
 ## Demo
+
+[View online](https://archtechx.github.io/alpine-reactive/demo.html)
 
 ```html
 <script>
@@ -40,7 +42,9 @@ One difference between this package's solution and Vue's `reactive()` is that Al
 </div>
 ```
 
-Under the hood, this creates a proxy that forwards everything to `window.clickCount`, but
+Under the hood, this creates a proxy that forwards everything to `window.clickCount`, but observes changes made to `window.clickCount` and updates the component as needed.
+
+Of course, you may use the same reactive proxy in multiple components.
 
 ## Full API
 
