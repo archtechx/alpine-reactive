@@ -1,0 +1,23 @@
+<style>
+    /* Makes the demo code cleaner, but damn writing CSS without Tailwind awful. */
+    body { width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; } div { display: flex; align-items: center; margin-bottom: 20px; } button { padding: 8px; margin: 24px; } * { font-size: 1.4rem ;}
+</style>
+
+<script type="module">
+    import { reactive, watch } from './src/index.js'
+
+    import 'https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js'
+
+    window.counter = reactive({
+        count: 10,
+    })
+</script>
+
+
+<div x-data="{ counter: $reactive(window.counter) }">
+    <button @click="counter.count--">-</button>
+    Click count: <span x-text="counter.count"></span>
+    <button @click="counter.count++">+</button>
+</div>
+
+<span>Try using <code>counter.count = 25</code> in the console.</span>

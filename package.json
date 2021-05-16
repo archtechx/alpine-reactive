@@ -1,0 +1,23 @@
+{
+  "name": "alpine-reactive",
+  "version": "0.1.0",
+  "description": "Reactivity layer for Alpine 2.x",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/archtechx/alpine-reactive.git"
+  },
+  "keywords": [
+    "alpine.js",
+    "reactivity"
+  ],
+  "author": "Samuel Štancl <samuel@archte.ch>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/archtechx/alpine-reactive/issues"
+  },
+  "homepage": "https://github.com/archtechx/alpine-reactive#readme"
+}
