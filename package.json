@@ -3,9 +3,9 @@
   "version": "0.1.0",
   "description": "Reactivity layer for Alpine 2.x",
   "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "files": [
+      "src/index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/archtechx/alpine-reactive.git"
