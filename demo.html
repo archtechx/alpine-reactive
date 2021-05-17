@@ -14,6 +14,14 @@
 </script>
 
 
+<h2>First counter</h2>
+<div x-data="{ counter: $reactive(window.counter) }">
+    <button @click="counter.count--">-</button>
+    Click count: <span x-text="counter.count"></span>
+    <button @click="counter.count++">+</button>
+</div>
+
+<h2>Second counter</h2>
 <div x-data="{ counter: $reactive(window.counter) }">
     <button @click="counter.count--">-</button>
     Click count: <span x-text="counter.count"></span>
