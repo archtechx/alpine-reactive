@@ -1,6 +1,6 @@
 {
   "name": "@archtechx/alpine-reactive",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Reactivity layer for Alpine 2.x",
   "main": "src/index.js",
   "files": [
