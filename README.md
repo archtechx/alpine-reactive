@@ -24,6 +24,48 @@ This package provides a reactive proxy wrapper for these objects. The syntax is 
 
 One difference between this package's solution and Vue's `reactive()` is that Alpine requires the calls to be **component-specific**. Meaning, the `reactive()` helper also needs the component instance/element. To simplify that, the package also provides a magic Alpine property, `$reactive`.
 
+## Installation
+
+### npm
+
+```sh
+npm install --save-dev @archtechx/alpine-reactive
+```
+
+Then import the library **before importing Alpine**:
+```js
+import '@archtechx/alpine-reactive'
+
+// import 'alpinejs'
+```
+
+To create reactive proxies, import the `reactive` helper:
+
+```js
+import { reactive } from '@archtechx/alpine-reactive'
+
+window.clickCounter = reactive({
+    counter: 10,
+})
+```
+
+The Alpine hook is executed automatically regardless of what parts of the library you import. For a full reference of the available helpers, see the [Full API](#full-api) section below.
+
+### CDN
+
+```html
+<script type="module">
+    import { reactive } from 'https://unpkg.com/@archtechx/alpine-reactive'
+
+    window.clickCounter = reactive({
+        counter: 10,
+    })
+
+    // If you want to use reactive() outside of this script tag:
+    // window.reactive = reactive
+</script>
+```
+
 ## Demo
 
 [View online](https://archtechx.github.io/alpine-reactive/demo.html)

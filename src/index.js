@@ -99,13 +99,19 @@ export function addMagicProperty() {
     })
 }
 
+window.__ALPINE_REACTIVE_REGISTERED__ = false
+
 export function register() {
-    const deferrer = window.deferLoadingAlpine || function (callback) { callback() }
+    if (! window.__ALPINE_REACTIVE_REGISTERED__) {
+        const deferrer = window.deferLoadingAlpine || function (callback) { callback() }
 
-    window.deferLoadingAlpine = function (callback) {
-        addMagicProperty()
+        window.deferLoadingAlpine = function (callback) {
+            addMagicProperty()
 
-        deferrer(callback)
+            deferrer(callback)
+        }
+
+        window.__ALPINE_REACTIVE_REGISTERED__ = true
     }
 }
 
