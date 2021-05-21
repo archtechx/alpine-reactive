@@ -49,7 +49,7 @@ export function ref(value) {
 }
 
 export function isReactiveProxy(proxy) {
-    return proxy && proxy.__alpine_componentEls !== undefined
+    return proxy && typeof proxy.__alpine_componentEls === 'array'
 }
 
 export function reactive(value, componentEl = null) {
